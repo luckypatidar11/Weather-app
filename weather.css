@@ -1,0 +1,196 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+}
+
+.header {
+    width: min(520px, calc(100% - 2rem));
+    padding: 24px;
+    border-radius: 28px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(16px);
+}
+
+h1 {
+    font-size: 2.3rem;
+    letter-spacing: 0.15em;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+}
+
+.search-box {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.search-box input {
+    flex: 1 1 220px;
+    min-width: 180px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    outline: none;
+    font-size: 1rem;
+}
+
+.search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.search-box button {
+    padding: 14px 24px;
+    border: none;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.85);
+    color: #3d3d3d;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.suggestions {
+    list-style: none;
+    margin: 8px 0 22px;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    max-height: 240px;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.suggestions li {
+    padding: 12px 16px;
+    cursor: pointer;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.suggestions li:last-child {
+    border-bottom: none;
+}
+
+.suggestions li:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 24px;
+    padding: 24px;
+    text-align: left;
+}
+
+.location {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 18px;
+}
+
+.location h2 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.location p {
+    margin: 6px 0 0;
+    opacity: 0.9;
+}
+
+.local-time {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    text-align: right;
+}
+
+.weather-main {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 22px;
+}
+
+.weather-main img {
+    width: 90px;
+    height: 90px;
+}
+
+.temp {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.condition {
+    margin: 8px 0 0;
+    font-size: 1rem;
+    opacity: 0.95;
+}
+
+.weather-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.weather-details div {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 16px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.weather-details span {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 6px;
+}
+
+.weather-details strong {
+    display: block;
+    font-size: 1.1rem;
+}
+
+.card.empty {
+    text-align: center;
+    padding: 40px 24px;
+}
+
+.card.empty p {
+    margin: 0;
+    opacity: 0.85;
+}
+
+@media (max-width: 440px) {
+    .header {
+        padding: 18px;
+    }
+
+    .weather-main {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .local-time {
+        text-align: left;
+    }
+}
